@@ -340,9 +340,7 @@ textarea:focus-visible {
   position: relative;
   min-height: 100svh;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 68% 62%, rgba(184, 240, 0, 0.12), transparent 22%),
-    linear-gradient(120deg, #111515, #050707 55%, #131716);
+  background: #070909;
 }
 
 .hero-media,
@@ -352,44 +350,18 @@ textarea:focus-visible {
 }
 
 .hero-media {
-  background-image:
-    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-  background-size: 70px 70px;
-  perspective: 1000px;
+  background-image: url("/Images/HeroPhoto.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: auto 135%;
+  filter: saturate(.88) contrast(1.05);
+  transform: scale(1.01);
 }
 
 .hero-shade {
-  background: linear-gradient(90deg, rgba(5,7,7,.98) 0%, rgba(5,7,7,.8) 43%, rgba(5,7,7,.17) 75%, rgba(5,7,7,.65) 100%);
-}
-
-.hero-beam {
-  position: absolute;
-  top: -20%;
-  width: 3px;
-  height: 120%;
-  background: linear-gradient(to bottom, transparent, rgba(255,255,255,.85), transparent);
-  box-shadow: 0 0 30px rgba(255,255,255,.55);
-  transform: rotate(24deg);
-}
-
-.beam-one { right: 24%; }
-.beam-two { right: 38%; opacity: .48; }
-
-.hero-car-shape {
-  position: absolute;
-  right: 4%;
-  bottom: 11%;
-  width: min(64vw, 900px);
-  height: 30vw;
-  max-height: 390px;
-  border-radius: 60% 38% 12% 18% / 58% 62% 22% 28%;
   background:
-    radial-gradient(circle at 24% 84%, #060707 0 8%, #303634 8.3% 13%, transparent 13.5%),
-    radial-gradient(circle at 79% 84%, #060707 0 8%, #303634 8.3% 13%, transparent 13.5%),
-    linear-gradient(165deg, transparent 0 22%, #2d3430 23% 32%, #0d1110 34% 60%, #1e2522 61% 72%, #090b0a 74%);
-  filter: drop-shadow(0 28px 28px rgba(0,0,0,.7));
-  opacity: .85;
+    linear-gradient(90deg, rgba(5,7,7,.97) 0%, rgba(5,7,7,.83) 38%, rgba(5,7,7,.2) 69%, rgba(5,7,7,.42) 100%),
+    linear-gradient(0deg, rgba(5,7,7,.62) 0%, transparent 38%);
 }
 
 .hero-content {
@@ -478,28 +450,6 @@ textarea:focus-visible {
   margin-top: 4px;
   color: var(--muted);
   font-size: 0.75rem;
-}
-
-.hero-placeholder-note {
-  position: absolute;
-  z-index: 3;
-  right: 24px;
-  bottom: 22px;
-  width: min(340px, 38vw);
-  padding: 12px 16px;
-  color: #aeb5aa;
-  background: rgba(6,8,8,.76);
-  border: 1px solid rgba(255,255,255,.12);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: .63rem;
-}
-
-.hero-placeholder-note small {
-  display: block;
-  margin-bottom: 5px;
-  color: var(--acid);
-  letter-spacing: .1em;
-  text-transform: uppercase;
 }
 
 /* Core sections */
@@ -898,13 +848,12 @@ textarea:focus-visible {
   .section-pad { padding-block: 84px; }
   .header-actions .button { display: none; }
   .home-hero h1 { font-size: clamp(3.3rem, 13vw, 6rem); }
-  .hero-shade { background: linear-gradient(to bottom, rgba(5,7,7,.76), rgba(5,7,7,.95) 73%); }
-  .hero-car-shape { right: -15%; bottom: 22%; width: 100vw; height: 48vw; opacity: .58; }
+  .hero-media { background-position: 55% top; background-size: auto 112%; }
+  .hero-shade { background: linear-gradient(to bottom, rgba(5,7,7,.25), rgba(5,7,7,.96) 68%); }
   .hero-content { justify-content: flex-end; padding-bottom: 72px; }
   .hero-kicker { display: grid; gap: 5px; }
   .hero-kicker span + span::before { display: none; }
   .hero-proof { width: 100%; }
-  .hero-placeholder-note { display: none; }
   .intro-grid,.section-heading,.feature-project,.testimonial-grid,.service-intro,.included-grid,.outcome-section,.faq-section,.decision-section,.about-story,.contact-map,.booking-hero,.booking-wrap { grid-template-columns: 1fr; }
   .feature-project-copy { order: 2; }
   .media-tall { min-height: 520px; }
@@ -974,4 +923,3 @@ textarea:focus-visible {
   html { scroll-behavior: auto; }
   *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
-

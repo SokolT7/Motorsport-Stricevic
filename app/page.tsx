@@ -7,11 +7,7 @@ export default function Home() {
   return (
     <main>
       <section className="home-hero">
-        <div className="hero-media" aria-hidden="true">
-          <span className="hero-beam beam-one"></span>
-          <span className="hero-beam beam-two"></span>
-          <span className="hero-car-shape"></span>
-        </div>
+        <div className="hero-media" aria-hidden="true"></div>
         <div className="hero-shade"></div>
         <div className="hero-content content-shell">
           <div className="hero-kicker">
@@ -39,10 +35,6 @@ export default function Home() {
             <div><strong>Iskustvo</strong><span>Izgrađeno kroz godine rada</span></div>
             <div><strong>Povjerenje</strong><span>Od dailyja do superautomobila</span></div>
           </div>
-        </div>
-        <div className="hero-placeholder-note">
-          <small>Hero vizual za zamjenu</small>
-          Široka fotografija radionice · vozilo pod LED linijama · bez vidljive registracije
         </div>
       </section>
 
@@ -174,4 +166,3 @@ export default function Home() {
     </main>
   );
 }
-
