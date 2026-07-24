@@ -164,6 +164,7 @@ export default function Home() {
           <a href={siteConfig.mapsHref} target="_blank" rel="noreferrer">Otvori upute za dolazak ↗</a>
         </div>
         <MediaPlaceholder
+          className="footer-workshop-photo"
           src="/Images/HeroPhoto.png"
           objectPosition="center 22%"
           label="Pročelje radionice Motorsport Stričević u Splitu."
