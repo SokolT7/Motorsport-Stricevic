@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 type MediaPlaceholderProps = {
   label: string;
   index?: string;
@@ -22,12 +20,11 @@ export function MediaPlaceholder({
   return (
     <div className={`media-placeholder ${src ? "media-photo" : ""} ${tall ? "media-tall" : ""} ${className}`}>
       {src ? (
-        <Image
+        <img
           src={src}
           alt={label}
-          fill
-          priority={priority}
-          sizes="(max-width: 820px) 100vw, 50vw"
+          loading={priority ? "eager" : "lazy"}
+          decoding="async"
           style={{ objectPosition }}
         />
       ) : (
