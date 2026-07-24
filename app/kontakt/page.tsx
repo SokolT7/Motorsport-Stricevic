@@ -27,7 +27,12 @@ export default function ContactPage() {
         </div>
       </section>
       <section className="contact-map content-shell section-pad">
-        <MediaPlaceholder tall label="Karta/vanjska fotografija: ulaz u radionicu, smjer dolaska i mjesto za primopredaju vozila." />
+        <MediaPlaceholder
+          tall
+          src="/Images/HeroPhoto.png"
+          objectPosition="center 30%"
+          label="Ulaz u radionicu Motorsport Stričević u Splitu."
+        />
         <div>
           <p className="eyebrow">Prije dolaska</p>
           <h2>Jednostavna primopredaja, bez čekanja.</h2>
@@ -43,4 +48,3 @@ export default function ContactPage() {
     </main>
   );
 }
-

@@ -5,10 +5,12 @@ type PageHeroProps = {
   title: string;
   intro: string;
   placeholder: string;
+  image?: string;
+  objectPosition?: string;
   children?: React.ReactNode;
 };
 
-export function PageHero({ eyebrow, title, intro, placeholder, children }: PageHeroProps) {
+export function PageHero({ eyebrow, title, intro, placeholder, image, objectPosition, children }: PageHeroProps) {
   return (
     <section className="page-hero content-shell">
       <div className="page-hero-copy">
@@ -17,8 +19,7 @@ export function PageHero({ eyebrow, title, intro, placeholder, children }: PageH
         <p className="page-lead">{intro}</p>
         {children}
       </div>
-      <MediaPlaceholder label={placeholder} tall />
+      <MediaPlaceholder label={placeholder} src={image} objectPosition={objectPosition} tall priority />
     </section>
   );
 }
-

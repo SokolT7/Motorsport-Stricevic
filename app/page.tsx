@@ -88,6 +88,8 @@ export default function Home() {
         <MediaPlaceholder
           tall
           index="01"
+          src="/Images/911Carrera_GTS.jpg"
+          objectPosition="center 42%"
           label="Hero projekt: automobil u radionici, 4:5 kadar, duboki crni tonovi i jasne LED refleksije."
         />
       </section>
@@ -121,7 +123,7 @@ export default function Home() {
           <div className="project-grid">
             {projects.map((project, index) => (
               <article className="project-card" key={project.vehicle}>
-                <MediaPlaceholder index={`0${index + 1}`} label={project.placeholder} />
+                <MediaPlaceholder index={`0${index + 1}`} label={project.placeholder} src={project.image} />
                 <div>
                   <span>{project.category}</span>
                   <h3>{project.vehicle}</h3>
@@ -161,7 +163,11 @@ export default function Home() {
           <a href={siteConfig.phoneHref}>{siteConfig.phoneDisplay}</a>
           <a href={siteConfig.mapsHref} target="_blank" rel="noreferrer">Otvori upute za dolazak ↗</a>
         </div>
-        <MediaPlaceholder label="Fotografija pročelja radionice iz smjera dolaska; ulaz i oznaka jasno vidljivi." />
+        <MediaPlaceholder
+          src="/Images/HeroPhoto.png"
+          objectPosition="center 22%"
+          label="Pročelje radionice Motorsport Stričević u Splitu."
+        />
       </section>
     </main>
   );

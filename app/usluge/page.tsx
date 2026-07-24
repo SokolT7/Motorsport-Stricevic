@@ -17,6 +17,8 @@ export default function ServicesPage() {
         eyebrow="Usluge · Split"
         title="Pravi tretman počinje dobrom procjenom."
         intro="Ne biramo postupak prema navici, nego prema materijalu, stanju i cilju. Istražite usluge, a mi ćemo vam pomoći odabrati razuman opseg rada."
+        image="/Images/X5_M_exterior.jpg"
+        objectPosition="center 35%"
         placeholder="Fotografija cijele radionice s više zona rada; automobil u prvom planu, oprema i LED rasvjeta u dubini."
       >
         <Link className="button button-accent" href="/rezervacija">Zatraži procjenu <span>↗</span></Link>
@@ -37,4 +39,3 @@ export default function ServicesPage() {
     </main>
   );
 }
-

@@ -29,11 +29,15 @@ export type Service = {
   process: { title: string; text: string }[];
   faq: { question: string; answer: string }[];
   placeholder: string;
+  heroImage: string;
+  resultImage: string;
 };
 
 export const services: Service[] = [
   {
     slug: "dubinsko-ciscenje-automobila-split",
+    heroImage: "/Images/BMW_X5_M_interior.jpg",
+    resultImage: "/Images/dubinsko_ciscenje_RR.jpg",
     index: "01",
     name: "Dubinsko čišćenje automobila",
     shortName: "Dubinsko čišćenje",
@@ -86,6 +90,8 @@ export const services: Service[] = [
   },
   {
     slug: "poliranje-automobila-split",
+    heroImage: "/Images/poliranje_laka.jpg",
+    resultImage: "/Images/Maserati_3.jpg",
     index: "02",
     name: "Poliranje automobila i korekcija laka",
     shortName: "Poliranje laka",
@@ -138,6 +144,8 @@ export const services: Service[] = [
   },
   {
     slug: "keramicka-zastita-automobila-split",
+    heroImage: "/Images/Keramicka_zastita.jpg",
+    resultImage: "/Images/X5_M_exterior2.jpg",
     index: "03",
     name: "Keramička zaštita automobila",
     shortName: "Keramička zaštita",
@@ -190,6 +198,8 @@ export const services: Service[] = [
   },
   {
     slug: "premium-pranje-automobila",
+    heroImage: "/Images/Cayenne_ext.jpg",
+    resultImage: "/Images/911Carrera_GTS.jpg",
     index: "04",
     name: "Premium ručno pranje i održavanje",
     shortName: "Premium pranje",
@@ -245,18 +255,21 @@ export const services: Service[] = [
 export const projects = [
   {
     vehicle: "Porsche 911",
+    image: "/Images/911Carrera_GTS.jpg",
     category: "Korekcija laka",
     treatment: "Višefazna korekcija · završna zaštita",
     placeholder: "Prije/poslije fotografije stražnjeg boka pod jednakim inspekcijskim svjetlom.",
   },
   {
     vehicle: "Ferrari",
+    image: "/Images/Ferrari296GTB_exterior_radovi.jpg",
     category: "Premium održavanje",
     treatment: "Sigurno pranje · detalji eksterijera",
     placeholder: "Krupni kadar crvenog laka, oznake vozila i vodene perle nakon tretmana.",
   },
   {
     vehicle: "Obiteljski SUV",
+    image: "/Images/BMW_X5_M_interior2.jpg",
     category: "Dubinsko čišćenje",
     treatment: "Potpuna obrada interijera",
     placeholder: "Stvarni daily-driver prije/poslije; sjedala i tepisi fotografirani iz istog kuta.",
@@ -266,4 +279,3 @@ export const projects = [
 export function getService(slug: string) {
   return services.find((service) => service.slug === slug);
 }
-

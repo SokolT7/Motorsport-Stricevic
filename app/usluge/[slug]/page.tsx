@@ -49,7 +49,7 @@ export default async function ServicePage({ params }: Props) {
             <a className="text-link" href="#detalji">Što uključuje <span>↓</span></a>
           </div>
         </div>
-        <MediaPlaceholder tall label={service.placeholder} />
+        <MediaPlaceholder tall src={service.heroImage} label={service.placeholder} priority />
       </section>
 
       <section className="service-intro content-shell section-pad" id="detalji">
@@ -96,7 +96,7 @@ export default async function ServicePage({ params }: Props) {
       </section>
 
       <section className="outcome-section content-shell section-pad">
-        <MediaPlaceholder label={`Prije i poslije: ${service.shortName}; identičan kadar i osvjetljenje.`} />
+        <MediaPlaceholder src={service.resultImage} label={`Rezultat usluge: ${service.shortName}.`} />
         <div>
           <p className="eyebrow">Očekivani rezultat</p>
           <h2>Jasan cilj, bez nerealnih obećanja.</h2>
@@ -128,4 +128,3 @@ export default async function ServicePage({ params }: Props) {
     </main>
   );
 }
-

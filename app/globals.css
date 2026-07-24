@@ -206,9 +206,16 @@ textarea:focus-visible {
   z-index: 100;
   inset: 0 0 auto;
   color: var(--white);
-  background: linear-gradient(to bottom, rgba(6, 8, 8, 0.94), rgba(6, 8, 8, 0.72));
+  background: rgba(6, 8, 8, 0.9);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(16px);
+  transition: background 240ms ease, border-color 240ms ease, backdrop-filter 240ms ease;
+}
+
+.site-header.is-at-top {
+  background: linear-gradient(to bottom, rgba(5, 7, 7, 0.56), rgba(5, 7, 7, 0.14) 72%, transparent);
+  border-bottom-color: transparent;
+  backdrop-filter: blur(0);
 }
 
 .header-shell {
@@ -351,16 +358,16 @@ textarea:focus-visible {
 
 .hero-media {
   background-image: url("/Images/HeroPhoto.png");
-  background-position: center top;
+  background-position: center 64%;
   background-repeat: no-repeat;
-  background-size: auto 135%;
+  background-size: cover;
   filter: saturate(.88) contrast(1.05);
-  transform: scale(1.01);
 }
 
 .hero-shade {
   background:
-    linear-gradient(90deg, rgba(5,7,7,.97) 0%, rgba(5,7,7,.83) 38%, rgba(5,7,7,.2) 69%, rgba(5,7,7,.42) 100%),
+    linear-gradient(90deg, transparent 52%, rgba(5,7,7,.2) 64%, rgba(5,7,7,.88) 82%, #050707 94%),
+    linear-gradient(90deg, rgba(5,7,7,.97) 0%, rgba(5,7,7,.83) 38%, rgba(5,7,7,.16) 66%, transparent 78%),
     linear-gradient(0deg, rgba(5,7,7,.62) 0%, transparent 38%);
 }
 
@@ -371,8 +378,8 @@ textarea:focus-visible {
   flex-direction: column;
   justify-content: center;
   min-height: 100svh;
-  padding-top: 132px;
-  padding-bottom: 72px;
+  padding-top: 118px;
+  padding-bottom: 48px;
 }
 
 .hero-kicker {
@@ -393,9 +400,9 @@ textarea:focus-visible {
 }
 
 .home-hero h1 {
-  max-width: 1040px;
-  margin-bottom: 30px;
-  font-size: clamp(3.5rem, 7.3vw, 7.5rem);
+  max-width: 1300px;
+  margin-bottom: 24px;
+  font-size: clamp(3.5rem, 6.2vw, 6.6rem);
   font-weight: 700;
   letter-spacing: -0.075em;
   line-height: 0.87;
@@ -431,7 +438,7 @@ textarea:focus-visible {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   width: min(760px, 65%);
-  margin-top: clamp(58px, 8vh, 90px);
+  margin-top: clamp(36px, 5vh, 64px);
   border-top: 1px solid var(--line);
 }
 
@@ -573,6 +580,41 @@ textarea:focus-visible {
     linear-gradient(155deg, #232a27, #0d1110 45%, #171d1a);
   border: 1px solid var(--line);
   isolation: isolate;
+}
+
+.media-photo {
+  background: #0b0e0d;
+}
+
+.media-photo::before {
+  display: none;
+}
+
+.media-photo::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(5, 7, 7, 0.42), transparent 34%);
+}
+
+.media-photo img {
+  z-index: 0;
+  object-fit: cover;
+  filter: saturate(.94) contrast(1.03);
+  transition: transform 600ms cubic-bezier(.2, .7, .2, 1), filter 300ms ease;
+}
+
+.media-photo:hover img {
+  filter: saturate(1) contrast(1.04);
+  transform: scale(1.025);
+}
+
+.media-photo .media-index {
+  z-index: 2;
+  color: var(--white);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, .65);
 }
 
 .media-placeholder::before {
@@ -848,7 +890,7 @@ textarea:focus-visible {
   .section-pad { padding-block: 84px; }
   .header-actions .button { display: none; }
   .home-hero h1 { font-size: clamp(3.3rem, 13vw, 6rem); }
-  .hero-media { background-position: 55% top; background-size: auto 112%; }
+  .hero-media { background-position: 55% top; background-size: cover; }
   .hero-shade { background: linear-gradient(to bottom, rgba(5,7,7,.25), rgba(5,7,7,.96) 68%); }
   .hero-content { justify-content: flex-end; padding-bottom: 72px; }
   .hero-kicker { display: grid; gap: 5px; }

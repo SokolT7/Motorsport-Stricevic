@@ -17,7 +17,13 @@ export default function AboutPage() {
           <h1>Automobili su strast.<br /><em>Pristup je zanat.</em></h1>
           <p className="page-lead">Motorsport Stričević nastao je iz dugogodišnjeg rada s vozilima i uvjerenja da vrhunski rezultat počinje pažljivim pregledom, a završava povjerenjem klijenta.</p>
         </div>
-        <MediaPlaceholder tall label="Portret vlasnika ili tima u radionici, prirodan kadar uz automobil i stvarnu opremu." />
+        <MediaPlaceholder
+          tall
+          priority
+          src="/Images/Maserati.jpg"
+          objectPosition="center 34%"
+          label="Maserati pod inspekcijskim svjetlima radionice Motorsport Stričević."
+        />
       </section>
       <section className="about-story content-shell section-pad">
         <p className="eyebrow">Naša priča</p>
@@ -39,8 +45,8 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="about-gallery content-shell section-pad">
-        <MediaPlaceholder label="Široka fotografija radionice bez vozila; čiste zone rada i inspekcijska rasvjeta." />
-        <MediaPlaceholder label="Krupni kadar profesionalne opreme i odobrenih proizvoda; logotipi samo uz dopuštenje." />
+        <MediaPlaceholder src="/Images/296GTB_interior.jpg" label="Detaljno uređen interijer Ferrarija 296 GTB." />
+        <MediaPlaceholder src="/Images/296GTB_interior2.jpg" label="Kokpit Ferrarija 296 GTB nakon tretmana." />
       </section>
       <section className="service-final-cta content-shell section-pad">
         <p className="eyebrow">Upoznajte nas kroz rad</p>
@@ -50,4 +56,3 @@ export default function AboutPage() {
     </main>
   );
 }
-

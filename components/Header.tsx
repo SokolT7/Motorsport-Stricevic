@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { siteConfig } from "@/lib/site";
 
 const nav = [
@@ -9,8 +12,17 @@ const nav = [
 ];
 
 export function Header() {
+  const [isAtTop, setIsAtTop] = useState(true);
+
+  useEffect(() => {
+    const updateHeader = () => setIsAtTop(window.scrollY < 24);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    return () => window.removeEventListener("scroll", updateHeader);
+  }, []);
+
   return (
-    <header className="site-header">
+    <header className={`site-header ${isAtTop ? "is-at-top" : "is-scrolled"}`}>
       <div className="header-shell">
         <Link className="brand" href="/" aria-label={`${siteConfig.name} — početna`}>
           <span className="brand-mark" aria-hidden="true">MS</span>
@@ -47,4 +59,3 @@ export function Header() {
     </header>
   );
 }
-
