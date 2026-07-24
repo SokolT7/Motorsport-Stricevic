@@ -680,11 +680,6 @@ textarea:focus-visible {
 .location-details p { margin: 0; color: var(--muted); }
 .location-details a:last-child { color: var(--acid); font-size: .72rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
 .location-strip .media-placeholder { min-height: 320px; }
-.footer-workshop-photo::after {
-  background:
-    radial-gradient(circle at 100% 100%, #080b0b 0 18%, rgba(8, 11, 11, .98) 31%, rgba(8, 11, 11, .5) 51%, transparent 70%),
-    linear-gradient(to top, rgba(5, 7, 7, .42), transparent 34%);
-}
 .footer-workshop-photo img {
   object-position: left center !important;
   transform: scale(1.1);
