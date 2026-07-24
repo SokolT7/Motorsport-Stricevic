@@ -685,6 +685,12 @@ textarea:focus-visible {
     radial-gradient(circle at 100% 100%, #080b0b 0 18%, rgba(8, 11, 11, .98) 31%, rgba(8, 11, 11, .5) 51%, transparent 70%),
     linear-gradient(to top, rgba(5, 7, 7, .42), transparent 34%);
 }
+.footer-workshop-photo img {
+  object-position: left center !important;
+  transform: scale(1.1);
+  transform-origin: left center;
+}
+.footer-workshop-photo:hover img { transform: scale(1.1); }
 
 /* Interior page heroes */
 .page-hero,
