@@ -763,7 +763,13 @@ textarea:focus-visible {
 }
 .work-hero h1 { max-width: 1000px; }
 .work-hero .page-lead { margin-left: auto; }
-.work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 64px 18px; padding-top: 40px; }
+.work-library { display: grid; gap: clamp(100px, 12vw, 170px); padding-top: 40px; }
+.work-group { display: grid; gap: 42px; }
+.work-group-heading { display: grid; grid-template-columns: 1.1fr .9fr; gap: 12px 8vw; align-items: end; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+.work-group-heading .eyebrow { grid-column: 1 / -1; margin-bottom: 4px; }
+.work-group-heading h2 { margin: 0; font-size: clamp(2.2rem, 4vw, 4rem); line-height: 1; letter-spacing: -.05em; }
+.work-group-heading > p:last-child { max-width: 540px; margin: 0 0 4px; color: var(--muted); line-height: 1.65; }
+.work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 54px 18px; }
 .work-item-1,.work-item-2,.work-item-3 { grid-column: auto; margin-top: 0; }
 .work-item .media-placeholder { min-height: 0; aspect-ratio: 4 / 5; }
 .work-item > div { padding-top: 18px; }
@@ -910,6 +916,8 @@ textarea:focus-visible {
   .page-hero .media-tall,.service-hero .media-tall,.about-hero .media-tall { min-height: 480px; }
   .decision-section .button { justify-self: start; }
   .work-hero .page-lead { margin-left: 0; }
+  .work-group-heading { grid-template-columns: 1fr; }
+  .work-group-heading .eyebrow { grid-column: auto; }
   .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap-block: 60px; }
   .work-item-1,.work-item-2,.work-item-3 { grid-column: auto; margin-top: 0; }
   .about-gallery { grid-template-columns: 1fr; }

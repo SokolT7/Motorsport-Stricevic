@@ -35,11 +35,29 @@ const extraProjects = [
 const workImages = [
   "/Images/Maserati.jpg", "/Images/BMW_X5_M_interior2.jpg", "/Images/brodic.jpg",
   "/Images/296GTB_interior.jpg", "/Images/296GTB_interior2.jpg", "/Images/BMW_X5_M_interior.jpg",
-  "/Images/Cayenne_ext.jpg", "/Images/cayenne_interior2.PNG", "/Images/Cayenne_turbo_ext.jpg",
+  "/Images/Cayenne_ext_enhanced.png", "/Images/cayenne_interior2.PNG", "/Images/Cayenne_turbo_ext.jpg",
   "/Images/dubinsko_ciscenje_RR.jpg", "/Images/Ferrari296GTB_exterior_radovi.jpg", "/Images/IMG_4604.jpg",
-  "/Images/jahta.jpg", "/Images/Keramicka_zastita.jpg", "/Images/maserati_2.jpg",
+  "/Images/jahta.jpg", "/Images/Keramicka_zastita.jpg", "/Images/maserati_2_enhanced.png",
   "/Images/Maserati_3.jpg", "/Images/poliranje_laka.jpg", "/Images/X5_M.jpg",
   "/Images/X5_M_exterior.jpg", "/Images/X5_M_exterior2.jpg", "/Images/911Carrera_GTS.jpg",
+];
+
+const projectGroups = [
+  {
+    title: "Eksterijer, korekcija i zaštita",
+    description: "Poliranje, keramički premazi i završna obrada laka pod kontroliranim svjetlom.",
+    indexes: [0, 6, 8, 10, 13, 14, 15, 16, 17, 18, 19, 20],
+  },
+  {
+    title: "Interijeri",
+    description: "Dubinsko čišćenje, njega kože i precizna obrada svakog detalja kabine.",
+    indexes: [1, 3, 4, 5, 7, 9, 11],
+  },
+  {
+    title: "Plovila",
+    description: "Čišćenje, poliranje i zaštita interijera, palube i vanjskih površina.",
+    indexes: [2, 12],
+  },
 ];
 
 export default function WorkPage() {
@@ -51,22 +69,35 @@ export default function WorkPage() {
         <h1>Stvarno stanje.<br /><em>Stvaran proces.</em><br />Stvaran rezultat.</h1>
         <p className="page-lead">Galerija će biti ispunjena stvarnim projektima iz radionice — svaki s problemom, postupkom i ishodom, ne samo završnim sjajem.</p>
       </section>
-      <section className="work-grid content-shell section-pad">
-        {allProjects.map((project, index) => (
-          <article className={`work-item work-item-${(index % 3) + 1}`} key={`${project.vehicle}-${index}`}>
-            <MediaPlaceholder
-              index={String(index + 1).padStart(2, "0")}
-              label={project.placeholder}
-              src={workImages[index]}
-              objectPosition={index === 2 || index === 12 ? "center 35%" : "center"}
-              tall={index % 3 === 0}
-            />
-            <div>
-              <span>{project.category}</span>
-              <h2>{project.vehicle}</h2>
-              <p>{project.treatment}</p>
+      <section className="work-library content-shell section-pad">
+        {projectGroups.map((group) => (
+          <section className="work-group" key={group.title}>
+            <div className="work-group-heading">
+              <p className="eyebrow">Odabrani radovi</p>
+              <h2>{group.title}</h2>
+              <p>{group.description}</p>
             </div>
-          </article>
+            <div className="work-grid">
+              {group.indexes.map((index) => {
+                const project = allProjects[index];
+                return (
+                  <article className="work-item" key={`${project.vehicle}-${index}`}>
+                    <MediaPlaceholder
+                      index={String(index + 1).padStart(2, "0")}
+                      label={project.placeholder}
+                      src={workImages[index]}
+                      objectPosition={index === 2 || index === 12 ? "center 35%" : "center"}
+                    />
+                    <div>
+                      <span>{project.category}</span>
+                      <h2>{project.vehicle}</h2>
+                      <p>{project.treatment}</p>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </section>
         ))}
       </section>
       <section className="service-final-cta content-shell section-pad">
